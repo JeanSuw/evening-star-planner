@@ -3,6 +3,7 @@
 // in the html.
 var today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY'));
+//$('#currentDay').text(moment().format('MMM D, YYYY'));
 
 //$(function () {
   // TODO: Add a listener for click events on the save button. This code should
@@ -43,14 +44,56 @@ saveBtn.on("click", function ()
   }
 );
 
+// Helper method for changeColor
+function switchToNumber(){
+  var currentTimeID = $(this).attr("id");
+  switch (currentTimeID) {
+    case 'hour-9':
+      return 9;
+    case 'hour-10':
+      return 10;
+    case 'hour-11':
+      return 11;
+    case 'hour-12':
+      return 12;
+    case 'hour-13':
+      return 13;
+    case 'hour-14':
+      return 14;
+    case 'hour-15':
+      return 15;
+    case 'hour-16':
+      return 16;
+    case 'hour-17':
+      return 17;
+    default:
+      return -1;
+  }
+}
+
+// helper method for changeColor ()
+function isNotWorkHour(){
+  var todayHour = today.hour();
+  if (todayHour >= 0 && todayHour < 9){
+    return true;
+  }else if (todayHour >= 18 && todayHour < 24){
+    return true;
+  }
+}
+
+
 // Change color to determine if the blocks are past, present or future
 function changeColor (){
-  var todayHour = today.hour(); // Get today's current hour
+  //var todayHour = moment().hour(); // Get today's current hour
+  var todayHour = today.hour();
   $(".time-block").each(function() {
-    var hourInTimeBlock = parseInt($(this).attr("id"));
-    console.log("Inside loop check the time: " + this);
+    //var hourInTimeBlock = parseInt($(this).attr("id"));
+    var hourInTimeBlock = switchToNumber();
+    console.log("Inside loop check the time: " + hourInTimeBlock);
+    console.log("today hour: "+ todayHour);
+    //console.log($(this).attr("id"));
 
-    if (hourInTimeBlock > todayHour){
+    if (hourInTimeBlock > todayHour || isNotWorkHour()){
       $(this).addClass("future");
     }else if (hourInTimeBlock === todayHour){
       $(this).addClass("present");
@@ -72,3 +115,6 @@ function keepPlans(){
     }
   });
 }
+
+changeColor();
+keepPlans();
