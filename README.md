@@ -22,7 +22,8 @@ Without these guidances, this project would not function.
 * [jQuery on() method](https://www.w3schools.com/jquery/event_on.asp)
 * [Difference between $(this) and ‘this’ in jQuery](https://www.geeksforgeeks.org/difference-between-this-and-this-in-jquery/)
 * [jQuery Siblings](https://www.w3schools.com/jquery/traversing_siblings.asp)
-* []()
-* []()
+* [Day.js Hour](https://day.js.org/docs/en/get-set/hour)
+* [Treehouse Community Use for loop in jQuery instead of $.each()?
+](https://teamtreehouse.com/community/use-for-loop-in-jquery-instead-of-each)
 * []()
 * []()

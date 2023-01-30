@@ -4,7 +4,7 @@
 var today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY'));
 
-$(function () {
+//$(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -28,9 +28,10 @@ $(function () {
 
   // TODO: Add code to display the current date in the header of the page.
 
-});
+//});
 
 // When the user click save button, it should save in 
+var saveBtn = $(".saveBtn");
 saveBtn.on("click", function ()
   {
     var eventPlan, eventTime;
@@ -39,8 +40,35 @@ saveBtn.on("click", function ()
     eventTime = $(this).siblings(".hour").text();
     console.log(eventTime); // check what type of evenTime
     localStorage.setItem(eventTime, eventPlan);
-    
-    // Change color
-    // Display updated events when the user change
   }
 );
+
+// Change color to determine if the blocks are past, present or future
+function changeColor (){
+  var todayHour = today.hour(); // Get today's current hour
+  $(".time-block").each(function() {
+    var hourInTimeBlock = parseInt($(this).attr("id"));
+    console.log("Inside loop check the time: " + this);
+
+    if (hourInTimeBlock > todayHour){
+      $(this).addClass("future");
+    }else if (hourInTimeBlock === todayHour){
+      $(this).addClass("present");
+    }else{
+      $(this).addClass("past");
+    }
+  })
+};
+
+// Display updated events when the user change
+function keepPlans(){
+  $(".hour").each(function() {
+    var currentHour = $(this).text();
+    var getCurrentPlan = localStorage.getItem(currentHour);
+    console.log(this);
+    console.log(currentHour);
+    if (getCurrentPlan !== null){
+      $(this).siblings(".description").val(getCurrentPlan);
+    }
+  });
+}
