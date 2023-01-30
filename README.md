@@ -3,6 +3,10 @@
 ## Description
 A simple calendar application that allows a user to save events for each hour of the day.
 
+## Link
+* [Evening-Star-Planner GitHub](https://github.com/JeanSuw/evening-star-planner)
+* [Evening-Star-Planner website](https://jeansuw.github.io/evening-star-planner/)
+
 ## Installation
 This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery. This code is built on [starter code](https://github.com/coding-boot-camp/crispy-octo-meme).
 
@@ -11,9 +15,8 @@ This planner allows you to edit any events whether it is in the past, present, o
 
 Time block color indicators
 * Gray: Past
-* Orange: Present
+* Red: Present
 * Green: Future
-
 
 ## Acknowledge
 Without these guidances, this project would not function.
