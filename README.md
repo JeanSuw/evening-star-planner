@@ -19,10 +19,9 @@ Time block color indicators
 Without these guidances, this project would not function.
 
 * [Bootstrap Text-alighment](https://getbootstrap.com/docs/5.3/components/card/#text-alignment)
-* []()
-* []()
-* []()
-* []()
+* [jQuery on() method](https://www.w3schools.com/jquery/event_on.asp)
+* [Difference between $(this) and ‘this’ in jQuery](https://www.geeksforgeeks.org/difference-between-this-and-this-in-jquery/)
+* [jQuery Siblings](https://www.w3schools.com/jquery/traversing_siblings.asp)
 * []()
 * []()
 * []()
