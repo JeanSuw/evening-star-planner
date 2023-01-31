@@ -36,9 +36,7 @@ saveBtn.on("click", function ()
   {
     var eventPlan, eventTime;
     eventPlan = $(this).siblings(".description").val();
-    console.log(eventPlan); // check what type of eventPlan
     eventTime = $(this).siblings(".hour").text();
-    console.log(eventTime); // check what type of evenTime
     localStorage.setItem(eventTime, eventPlan);
   }
 );
@@ -83,14 +81,19 @@ function changeColor (){
   var todayHour = today.hour();
   $(".time-block").each(function() {
     var hourInTimeBlock = switchToNumber();
-    //console.log("Inside loop check the time: " + hourInTimeBlock);
-    //console.log("today hour: "+ todayHour);
 
     if (hourInTimeBlock > todayHour || isBeforeWorkHour()){
+      $(this).removeClass("present");
+      $(this).removeClass("past");
       $(this).addClass("future");
+      
     }else if (hourInTimeBlock === todayHour){
+      $(this).removeClass("past");
+      $(this).removeClass("future");
       $(this).addClass("present");
     }else{
+      $(this).removeClass("future");
+      $(this).removeClass("present");
       $(this).addClass("past");
     }
   })
@@ -101,8 +104,6 @@ function keepPlans(){
   $(".hour").each(function() {
     var currentHour = $(this).text();
     var getCurrentPlan = localStorage.getItem(currentHour);
-    //console.log(this);
-    //console.log(currentHour);
     if (getCurrentPlan !== null){
       $(this).siblings(".description").val(getCurrentPlan);
     }
