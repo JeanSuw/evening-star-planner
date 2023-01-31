@@ -80,7 +80,6 @@ function isBeforeWorkHour(){
 
 // Change color to determine if the blocks are past, present or future
 function changeColor (){
-  //var todayHour = moment().hour(); // Get today's current hour
   var todayHour = today.hour();
   $(".time-block").each(function() {
     var hourInTimeBlock = switchToNumber();
