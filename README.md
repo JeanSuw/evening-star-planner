@@ -33,3 +33,4 @@ Without these guidances, this project would not function.
 * [jQuery [attribute=value] Selector](https://www.w3schools.com/jquery/sel_attribute_equal_value.asp)
 * [jQuery Attribute Contains Selector [name*=”value”]](https://api.jquery.com/attribute-contains-selector/)
 * [Stack Overflow: Do you need break in switch when return is used?](https://stackoverflow.com/questions/6330114/do-you-need-break-in-switch-when-return-is-used#:~:text=Yes%2C%20you%20can%20use%20return,return%20ends%20the%20function%20execution.)
+* [How to Get the ID of an Element using jQuery](https://www.tutorialrepublic.com/faq/how-to-get-the-id-of-an-element-using-jquery.php)

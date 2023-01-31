@@ -15,7 +15,6 @@ saveBtn.on("click", function ()
 // Helper method for changeColor
 function switchToNumber(index){
   var currentTimeID = $(".time-block").get(index).id;
-  console.log(currentTimeID);
   switch (currentTimeID) {
     case 'hour-9':
       return 9;
@@ -55,8 +54,6 @@ function changeColor (){
   $(".time-block").each(function() {
     
     var hourInTimeBlock = switchToNumber(numHour);
-    console.log(hourInTimeBlock);
-    console.log(todayHour);
     if (hourInTimeBlock > todayHour ){
       $(this).removeClass("present");
       $(this).removeClass("past");
