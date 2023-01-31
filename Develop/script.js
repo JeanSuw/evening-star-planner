@@ -13,8 +13,9 @@ saveBtn.on("click", function ()
 );
 
 // Helper method for changeColor
-function switchToNumber(){
-  var currentTimeID = $(this).attr("id");
+function switchToNumber(index){
+  var currentTimeID = $(".time-block").get(index).id;
+  console.log(currentTimeID);
   switch (currentTimeID) {
     case 'hour-9':
       return 9;
@@ -50,10 +51,13 @@ function isBeforeWorkHour(){
 // Change color to determine if the blocks are past, present or future
 function changeColor (){
   var todayHour = today.hour();
+  var numHour = 0;
   $(".time-block").each(function() {
-    var hourInTimeBlock = switchToNumber();
-
-    if (hourInTimeBlock > todayHour || isBeforeWorkHour()){
+    
+    var hourInTimeBlock = switchToNumber(numHour);
+    console.log(hourInTimeBlock);
+    console.log(todayHour);
+    if (hourInTimeBlock > todayHour ){
       $(this).removeClass("present");
       $(this).removeClass("past");
       $(this).addClass("future");
@@ -67,6 +71,7 @@ function changeColor (){
       $(this).removeClass("present");
       $(this).addClass("past");
     }
+    numHour++;
   })
 };
 
