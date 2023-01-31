@@ -27,8 +27,7 @@ Without these guidances, this project would not function.
 * [Difference between $(this) and ‘this’ in jQuery](https://www.geeksforgeeks.org/difference-between-this-and-this-in-jquery/)
 * [jQuery Siblings](https://www.w3schools.com/jquery/traversing_siblings.asp)
 * [Day.js Hour](https://day.js.org/docs/en/get-set/hour)
-* [Treehouse Community Use for loop in jQuery instead of $.each()?
-](https://teamtreehouse.com/community/use-for-loop-in-jquery-instead-of-each)
+* [Treehouse Community Use for loop in jQuery instead of $.each()?](https://teamtreehouse.com/community/use-for-loop-in-jquery-instead-of-each)
 * [CSS Attribute selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
 * 02-Advanced-CSS/24-Stu_CSS-Selectors
 * [jQuery [attribute=value] Selector](https://www.w3schools.com/jquery/sel_attribute_equal_value.asp)
