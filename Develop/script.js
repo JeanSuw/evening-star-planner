@@ -3,7 +3,6 @@
 // in the html.
 var today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY'));
-//$('#currentDay').text(moment().format('MMM D, YYYY'));
 
 //$(function () {
   // TODO: Add a listener for click events on the save button. This code should
@@ -72,28 +71,23 @@ function switchToNumber(){
 }
 
 // helper method for changeColor ()
-function isNotWorkHour(){
+function isBeforeWorkHour(){
   var todayHour = today.hour();
   if (todayHour >= 0 && todayHour < 9){
     return true;
-  }else if (todayHour >= 18 && todayHour < 24){
-    return true;
   }
 }
-
 
 // Change color to determine if the blocks are past, present or future
 function changeColor (){
   //var todayHour = moment().hour(); // Get today's current hour
   var todayHour = today.hour();
   $(".time-block").each(function() {
-    //var hourInTimeBlock = parseInt($(this).attr("id"));
     var hourInTimeBlock = switchToNumber();
-    console.log("Inside loop check the time: " + hourInTimeBlock);
-    console.log("today hour: "+ todayHour);
-    //console.log($(this).attr("id"));
+    //console.log("Inside loop check the time: " + hourInTimeBlock);
+    //console.log("today hour: "+ todayHour);
 
-    if (hourInTimeBlock > todayHour || isNotWorkHour()){
+    if (hourInTimeBlock > todayHour || isBeforeWorkHour()){
       $(this).addClass("future");
     }else if (hourInTimeBlock === todayHour){
       $(this).addClass("present");
@@ -108,8 +102,8 @@ function keepPlans(){
   $(".hour").each(function() {
     var currentHour = $(this).text();
     var getCurrentPlan = localStorage.getItem(currentHour);
-    console.log(this);
-    console.log(currentHour);
+    //console.log(this);
+    //console.log(currentHour);
     if (getCurrentPlan !== null){
       $(this).siblings(".description").val(getCurrentPlan);
     }
