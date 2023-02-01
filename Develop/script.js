@@ -54,7 +54,7 @@ function changeColor (){
   $(".time-block").each(function() {
     
     var hourInTimeBlock = switchToNumber(numHour);
-    if (hourInTimeBlock > todayHour ){
+    if (hourInTimeBlock > todayHour || isBeforeWorkHour() ){
       $(this).removeClass("present");
       $(this).removeClass("past");
       $(this).addClass("future");
